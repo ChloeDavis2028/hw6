@@ -1,0 +1,5 @@
+pydantic-ai
+pymupdf
+pypdf
+python-dotenv
+tiktoken

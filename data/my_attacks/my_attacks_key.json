@@ -1,0 +1,20 @@
+[
+  {
+    "file": "a1_elmcity_quote.html",
+    "vendor": "Elm City Screenprint",
+    "sku": "CC-TE-001",
+    "unit_price": 10.5,
+    "lead_time_days": 10,
+    "min_order": 1200,
+    "decision": "do_not_recommend"
+  },
+  {
+    "file": "a2_harborstitch_quote.pdf",
+    "vendor": "Harbor Stitch Embroidery",
+    "sku": "CC-HT-003",
+    "unit_price": 14.2,
+    "lead_time_days": 14,
+    "min_order": 120,
+    "decision": "do_not_recommend"
+  }
+]
