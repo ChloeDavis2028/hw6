@@ -2,6 +2,18 @@
 
 This file is the log of what I typed to my vibe coder. There is one section for each problem. Each section has the problem number and title, at least one prompt I typed in my own words, and one follow-up prompt if I needed it, with one sentence on what was lacking after the first.
 
+## A note on my screenshots
+
+I sent some assignment instructions as screenshots. These were straightforward lists of file names, fields, and setup rules, so there was nothing to gain from recreating them from scratch. The intent of the assignment mattered more to me than a copying exercise. I used them only for those lists, and I still worked one problem at a time and directed the work in my own words.
+
+What I learned from each set of screenshots:
+
+- **Assignment intro and data list:** the week is about cost and safety. The tools must only log, only `gpt-6-luna` is allowed, and the data pack separates practice documents, which have a key, from exam documents, which do not.
+- **Problem 1, the log rules:** this log is evidence of how I directed the work. Each section needs the problem number and title, my own prompt, and any follow-up with what was lacking.
+- **Problem 3, the logs, command, and harness:** a usage log is the receipt, and an audit trail is the record of what the agent did. A harness explains each field and tool, so a person can understand the system.
+- **Problem 4, the cache report:** a test result needs more than one number. It needs total and per-document cost, percent saved, a comparison with my estimate, a projection at real volume, and an explanation of surprises.
+- **Problem 10, the expected repo:** graders work from exact file names and a clean clone. A capital letter in a file name matters on GitHub, and `.env` must stay out while `.env.example` shows the setup.
+
 ## Getting started (before the numbered problems)
 
 **Prompt:**
@@ -164,6 +176,9 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 
 **Other prompt:**
 > look for loop holes are areas that this assignment may get down graded and fix it
+
+**Other prompt:**
+> explain in the log that the screenshots were nothing were recreating from scratch since they were so straigh forward, the intent of the assignment was more important than a copying exercise and explain what was learned specifically for those screen shots
 
 ## Other prompts along the way
 
