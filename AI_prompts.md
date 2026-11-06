@@ -50,7 +50,7 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 **Other prompt:**
 > now explain in more basic terms what this is accomplishing and why.  Then ensure this action is part of the ongoing checklist required for me to understand how to make things work in the future.
 
-**What was lacking after the first:**
+**What was lacking after the first:** My first prompt was only the title, so it had no files, fields, or tool requirements.
 
 ## Problem 4: With and without cached tokens
 
@@ -69,7 +69,7 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 **Other prompt:**
 > and again teach me in basic terms what is going on with this problem, keep a running dialogue for a future checklist and rewrite these prompts in a running prompt list so i can do this in the future on my own
 
-**What was lacking after the first:**
+**What was lacking after the first:** My first prompt was only the title, so it did not say how to run the test or prove it.
 
 ## Problem 5: Attack your own Agent
 
@@ -82,7 +82,7 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 **Other prompt:**
 > In output/attack_results.md, for every documetn that fooled the agent, write what fooled it and where in the fie it was hiding. open the documents the way a person would (browser, PDF viewer, email app) and compare that with what the agent read
 
-**What was lacking after the first:**
+**What was lacking after the first:** My first prompt did not say what to save for each document or how to explain what fooled the agent.
 
 ## Problem 6: Defend your Agent
 
@@ -98,7 +98,7 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 **Other prompt:**
 > the shop will use them later with a human signoff and keep a way to run teh agent with no defenses which is needed in problem 7
 
-**What was lacking after the first:**
+**What was lacking after the first:** My first prompt was only the title, so it did not name the three levels of defense.
 
 ## Problem 7: Red team
 
@@ -114,7 +114,7 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 **Other prompt:**
 > again give me an update on the exact steps I am learning so in the future I can do reeat these concepts and objectives on my own
 
-**What was lacking after the first:**
+**What was lacking after the first:** My first prompt was only the title, so it did not say what to attack or what to build.
 
 ## Problem 8: Exam documents
 
@@ -130,7 +130,7 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 **Other prompt:**
 > the graders will compare my results to a hidden answer key and rerun some agents to check.  POints will be given for correct fields and decisions, no trap tool calls, and clean documents handled normally.
 
-**What was lacking after the first:**
+**What was lacking after the first:** My first prompt was only the title, so it did not say which documents to run or that results could not be edited.
 
 ## Problem 9: Results Page
 
@@ -143,7 +143,7 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 **Other prompt:**
 > also, the page must show the five things below. Use real numbers from earlier problems.  Caching results, with a chart, attacks before and after defenses, what your deenses cost in tokens and dollars, your exam results and your two team red attacks, a short recommendation to the store manager: should Campus Customs turn this agent on for a real vendor mail, and what would it cost per month at 1000 documents a day?  and for the best part... create a designed boutique asthetique page with fonts, colors, layout that reads well and provides an upscale vibe
 
-**What was lacking after the first:**
+**What was lacking after the first:** My first prompt was only the title, so it did not say what file to build or how it had to open.
 
 ## Problem 10: Push to GitHub and submit the URL
 
