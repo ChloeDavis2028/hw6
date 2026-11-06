@@ -29,14 +29,18 @@ RENDER_DPI = 110
 INK_LEVEL = 200  # In a 0 to 255 gray scale, anything darker than this counts as visible ink.
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "wbr"}
 NEVER_SHOWN_TAGS = {"head", "script", "style"}
+HIDDEN_TAGS = {"noscript", "template"}
 HIDDEN_STYLE = re.compile(
-    r"display:none|visibility:hidden|opacity:0(\.0+)?(;|$)|font-size:(0|[0-3](\.\d+)?(px|pt))"
-    r"|(^|;)color:(#fff(fff)?|white|rgb\(255,255,255\))|(left|top|text-indent):-\d{3,}"
-    r"|height:0.*overflow:hidden|overflow:hidden.*height:0|clip:rect\(0|transform:scale\(0"
+    r"display:none|visibility:hidden|opacity:0(\.0\d*)?(;|$)|(^|;)color:transparent"
+    r"|font-size:(0(\.[0-2]\d*)?(px|pt|em|rem|%)?|[1-3](\.\d+)?(px|pt)|[1-9](\.\d+)?%)(;|$)"
+    r"|(left|right|top|text-indent):-\d{3,}|clip:rect\(0|clip-path:inset\((50|100)%|transform:scale\(0"
+    r"|(max-)?(height|width):0.*overflow:hidden|overflow:hidden.*(max-)?(height|width):0"
 )
 
 # Text colors so close to white that a person cannot read them on a white page.
-NEAR_WHITE_COLOR = re.compile(r"(^|;)color:(#f[0-9a-f]f[0-9a-f]f[0-9a-f]|#f[0-9a-f]{2})")
+NEAR_WHITE_COLOR = re.compile(
+    r"(^|;)color:(white|#f[0-9a-f]f[0-9a-f]f[0-9a-f]|#fff?\b|#f[0-9a-f]{2}\b|rgba?\(25[0-5],25[0-5],25[0-5])"
+)
 
 # The one document this run may open. agent.py sets it before each defended run.
 allowed_document: Path | None = None
@@ -50,7 +54,10 @@ def _clean_text(text: str) -> str:
 
 def _style_is_hidden(style: str) -> bool:
     style = re.sub(r"\s+", "", style).lower()
-    return bool(HIDDEN_STYLE.search(style) or NEAR_WHITE_COLOR.search(style))
+    if HIDDEN_STYLE.search(style):
+        return True
+    # White text is normal on a dark background, so only count it when no background is set.
+    return bool(NEAR_WHITE_COLOR.search(style)) and "background" not in style
 
 
 class _VisibleText(HTMLParser):
@@ -70,6 +77,7 @@ class _VisibleText(HTMLParser):
         names = set((attributes.get("class") or "").split()) | {attributes.get("id") or ""}
         hidden = (
             "hidden" in attributes
+            or tag in HIDDEN_TAGS
             or _style_is_hidden(attributes.get("style") or "")
             or bool(names & self.hidden_classes)
         )
@@ -95,7 +103,10 @@ class _VisibleText(HTMLParser):
 def _clean_html(html: str) -> tuple[str, list[str]]:
     style_blocks = " ".join(re.findall(r"<style[^>]*>(.*?)</style>", html, re.DOTALL | re.IGNORECASE))
     hidden_names = {
-        name for name, rules in re.findall(r"[.#]([\w-]+)\s*\{([^}]*)\}", style_blocks) if _style_is_hidden(rules)
+        name
+        for selector, rules in re.findall(r"([^{}]+)\{([^}]*)\}", style_blocks)
+        if _style_is_hidden(rules)
+        for name in re.findall(r"[.#]([\w-]+)", selector)
     }
     parser = _VisibleText(hidden_names)
     parser.feed(html)
@@ -166,7 +177,7 @@ def read_document(path: str) -> str:
         path: The path to the vendor document.
     """
     if allowed_document is None or Path(path).resolve() != allowed_document:
-        raise ValueError("Only the vendor document given for this run can be opened.")
+        return "Refused: only the vendor document given for this run can be opened."
     text, _ = clean_document(path)
     return f"<vendor_document>\n{text}\n</vendor_document>"
 

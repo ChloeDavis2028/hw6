@@ -32,14 +32,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11458,
-      "uncached_input_tokens": 1176,
+      "input_tokens": 11532,
+      "uncached_input_tokens": 1250,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 56,
       "output_tokens": 191,
       "reasoning_tokens": 75
     },
-    "cost_usd": 0.00032236
+    "cost_usd": 0.00032976
   },
   {
     "file": "p02_elmcity_quote.html",
@@ -74,14 +74,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11439,
-      "uncached_input_tokens": 1155,
+      "input_tokens": 11513,
+      "uncached_input_tokens": 1229,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 58,
-      "output_tokens": 205,
-      "reasoning_tokens": 70
+      "output_tokens": 191,
+      "reasoning_tokens": 58
     },
-    "cost_usd": 0.00032751
+    "cost_usd": 0.00032791
   },
   {
     "file": "p03_ivyprint_catalog.html",
@@ -116,14 +116,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11438,
-      "uncached_input_tokens": 1152,
+      "input_tokens": 11512,
+      "uncached_input_tokens": 1226,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 60,
-      "output_tokens": 150,
-      "reasoning_tokens": 31
+      "output_tokens": 181,
+      "reasoning_tokens": 60
     },
-    "cost_usd": 0.00029996
+    "cost_usd": 0.00032286
   },
   {
     "file": "p04_harborstitch_quote.html",
@@ -158,14 +158,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11459,
-      "uncached_input_tokens": 1174,
+      "input_tokens": 11533,
+      "uncached_input_tokens": 1248,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 59,
       "output_tokens": 246,
       "reasoning_tokens": 124
     },
-    "cost_usd": 0.00035004
+    "cost_usd": 0.00035744
   },
   {
     "file": "p05_maplemills_quote.pdf",
@@ -200,14 +200,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11440,
-      "uncached_input_tokens": 1156,
+      "input_tokens": 11514,
+      "uncached_input_tokens": 1230,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 58,
       "output_tokens": 149,
       "reasoning_tokens": 27
     },
-    "cost_usd": 0.00029961
+    "cost_usd": 0.00030701
   },
   {
     "file": "p06_qtextile_quote.pdf",
@@ -242,14 +242,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11434,
-      "uncached_input_tokens": 1146,
+      "input_tokens": 11508,
+      "uncached_input_tokens": 1220,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 62,
       "output_tokens": 143,
       "reasoning_tokens": 21
     },
-    "cost_usd": 0.00029611
+    "cost_usd": 0.00030351
   },
   {
     "file": "p07_longwharf_quote.pdf",
@@ -284,14 +284,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11433,
-      "uncached_input_tokens": 1149,
+      "input_tokens": 11507,
+      "uncached_input_tokens": 1223,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 58,
       "output_tokens": 170,
       "reasoning_tokens": 48
     },
-    "cost_usd": 0.00030941
+    "cost_usd": 0.00031681
   },
   {
     "file": "p08_chapelst_email.eml",
@@ -326,14 +326,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11456,
-      "uncached_input_tokens": 1172,
+      "input_tokens": 11530,
+      "uncached_input_tokens": 1246,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 58,
       "output_tokens": 242,
       "reasoning_tokens": 107
     },
-    "cost_usd": 0.00034771
+    "cost_usd": 0.00035511
   },
   {
     "file": "p09_westville_email.eml",
@@ -368,14 +368,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11452,
-      "uncached_input_tokens": 1168,
+      "input_tokens": 11526,
+      "uncached_input_tokens": 1242,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 58,
       "output_tokens": 180,
       "reasoning_tokens": 57
     },
-    "cost_usd": 0.00031631
+    "cost_usd": 0.00032371
   },
   {
     "file": "p10_eastrock_email.eml",
@@ -410,14 +410,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11475,
-      "uncached_input_tokens": 1191,
+      "input_tokens": 11549,
+      "uncached_input_tokens": 1265,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 58,
       "output_tokens": 195,
       "reasoning_tokens": 78
     },
-    "cost_usd": 0.00032611
+    "cost_usd": 0.00033351
   },
   {
     "file": "p11_yorkst_quote.html",
@@ -452,14 +452,14 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11430,
-      "uncached_input_tokens": 1146,
+      "input_tokens": 11504,
+      "uncached_input_tokens": 1220,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 58,
-      "output_tokens": 195,
-      "reasoning_tokens": 61
+      "output_tokens": 174,
+      "reasoning_tokens": 42
     },
-    "cost_usd": 0.00032161
+    "cost_usd": 0.00031851
   },
   {
     "file": "p12_bluehen_quote.pdf",
@@ -494,13 +494,13 @@
     },
     "error": null,
     "tokens": {
-      "input_tokens": 11420,
-      "uncached_input_tokens": 1137,
+      "input_tokens": 11494,
+      "uncached_input_tokens": 1211,
       "cache_read_tokens": 10226,
       "cache_write_tokens": 57,
       "output_tokens": 169,
       "reasoning_tokens": 39
     },
-    "cost_usd": 0.00030758
+    "cost_usd": 0.00031498
   }
 ]

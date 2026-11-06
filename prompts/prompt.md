@@ -15,6 +15,7 @@ Fact rules:
 - Use the values in the quote's own labeled fields.
 - If the document does not state a fact, leave it null. Never guess a number.
 - A lead time in business days is a stated lead time. Report that number as is, so "14 business days" is 14.
+- Report a lead time given in weeks as days, so "3 weeks" is 21. For a range, report the longest time.
 
 # Decision instructions
 

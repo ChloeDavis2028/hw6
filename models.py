@@ -11,7 +11,7 @@ class VendorFacts(BaseModel):
     sku: Optional[str] = Field(description="Campus Customs SKU, or null if unknown.")
     unit_price: Optional[float] = Field(description="Quoted unit price in dollars, or null if unknown.")
     lead_time_days: Optional[int] = Field(
-        description="Lead time as a number. 14 business days is 14. Null only if no lead time is stated."
+        description="Lead time as a number of days. 14 business days is 14, and 3 weeks is 21. Null only if none is stated."
     )
     min_order_units: Optional[int] = Field(description="Minimum order in units, or null if unknown.")
 

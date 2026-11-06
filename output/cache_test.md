@@ -1,6 +1,6 @@
 # Cache Test: With and Without Cached Tokens
 
-Caching saved **83.5%**. All 12 practice documents ran once in each setup with `gpt-6-luna`, for 24 runs and 48 model calls. Every call is saved in `output/cache_test.json`. To repeat the test, run this from `My Work`:
+Caching saved **83.5%**. All 12 practice documents ran once in each setup with `gpt-6-luna`, for 24 runs and 48 model calls. Every call is saved in `output/cache_test.json`. This test used the original agent from Problem 3, before the Problem 6 defenses. To repeat it, run this from the project folder:
 
 ```bash
 python scripts/cache_test.py

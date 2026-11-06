@@ -58,6 +58,13 @@ The first call writes the handbook to the cache. Later calls read it from there.
 - Each later call (cache read): 10,058 × $0.01 ÷ 1,000,000 = **$0.00010058**
 - 1,000 calls: 1 write + 999 reads = $0.00125725 + (999 × $0.00010058) = $0.00125725 + $0.10047942 = **$0.10173667**, about **$0.1017**
 
+### If every call were a cache read
+
+This simpler view leaves out the first write, so it is the lowest possible cached cost.
+
+- One call: 10,058 × $0.01 ÷ 1,000,000 = **$0.00010058**
+- 1,000 calls: $0.00010058 × 1,000 = **$0.10058**
+
 ### What caching saves
 
 - Dollars: $1.00580000 − $0.10173667 = **$0.90406333**

@@ -171,7 +171,8 @@ def vendor_status(vendor: str | None) -> str:
         return "unknown"
     if any(listed in name for listed in removed):
         return "removed_or_pending"
-    return "approved" if name in approved else "not_on_list"
+    # Legal endings, such as "Blue Hen Apparel Inc", still match an approved name.
+    return "approved" if any(name == a or name.startswith(f"{a} ") for a in approved) else "not_on_list"
 
 
 def apply_rules(facts: VendorFacts) -> tuple[str, str]:

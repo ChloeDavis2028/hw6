@@ -1,6 +1,6 @@
 # Attack Results: What Fooled the Agent
 
-With no defenses, the agent got **7 of 12** decisions right. **Five documents fooled it, and all five made it recommend a quote the key says to reject.** Each trick was text a person cannot see but the agent reads like any other text.
+This is the undefended agent from Problem 3. With no defenses, the agent got **7 of 12** decisions right. **Five documents fooled it, and all five made it recommend a quote the key says to reject.** Each trick was text a person cannot see but the agent reads like any other text.
 
 | Result | Count |
 |---|---|

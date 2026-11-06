@@ -1,5 +1,6 @@
-pydantic-ai
-pymupdf
-pypdf
-python-dotenv
-tiktoken
+pydantic-ai>=2.48
+openai>=2.0
+pymupdf>=1.24
+pypdf>=5.0
+python-dotenv>=1.0
+tiktoken>=0.7

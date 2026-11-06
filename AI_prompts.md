@@ -15,6 +15,7 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 (Sent with two screenshots of the assignment's AI_prompts.md instructions.)
 
 **Follow-up prompt:**
+> Where is the foder for HW6 on my computer?
 
 **What was lacking after the first:** Literally trying to understand the overall beginning intent of the problem and how to set it all up.
 
@@ -158,6 +159,30 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 **Other prompt:**
 > create a public repo
 
-**Follow-up prompt:**
+**Other prompt:**
+> Yes, add them (clicked a suggested reply)
 
-**What was lacking after the first:**
+**Other prompt:**
+> look for loop holes are areas that this assignment may get down graded and fix it
+
+## Other prompts along the way
+
+These are my folder, status, and teaching questions. They do not belong to one problem.
+
+> put it in MGT 409 AI
+
+> look at how the entire folder is organized and do the same way
+
+> did you find HW4 ?
+
+> follow then how HW4 assignment was completed but move the AI MGT folder under the MGT 409 AI folder so all of the course is togther
+
+> then do not move the folder
+
+> keep the folders the same as originally started for this session
+
+> give me an up to date summary of what I am reading and doing for this HW^ up to this point and where you think I am heading
+
+> give me an update on two different fronts: 1. how is the scoring of the assignent going in reference to the course and 2. gie me an update on what the teachings from this assignment are or should be and any gaps oropportunities that are driven by this assignent up to this point.
+
+> Problem 1, I'll type title (clicked a suggested reply)

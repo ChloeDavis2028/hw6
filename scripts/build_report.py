@@ -82,11 +82,11 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .strong td { font-weight: 600; }
 .chart { background: var(--card); border: 1px solid var(--rule); padding: 26px 28px; margin: 20px 0; }
 .chart-title { font: 400 1.35rem/1.25 var(--display); margin: 0 0 18px; }
-.row { display: grid; grid-template-columns: 124px 1fr 74px; gap: 14px; align-items: center; margin: 14px 0; font-family: var(--sans); font-size: .95rem; }
-.track { height: 14px; }
-.fill { height: 100%; border-radius: 0 4px 4px 0; background: var(--bar-a); }
-.fill.b { background: var(--bar-b); }
-.value { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.svg-chart { display: block; width: 100%; height: auto; }
+.svg-chart .bar-a { fill: var(--bar-a); }
+.svg-chart .bar-b { fill: var(--bar-b); }
+.chart-label { fill: var(--ink); font: 15px var(--sans); }
+.chart-value { fill: var(--ink); font: 600 15px var(--sans); }
 .note { color: var(--soft); font: .88rem/1.5 var(--sans); margin: 10px 0 0; }
 .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 20px 0; }
 .attack { background: var(--card); border: 1px solid var(--rule); padding: 24px 26px; }
@@ -111,7 +111,6 @@ footer { color: var(--soft); text-align: center; font: .82rem/1.6 var(--sans); m
   .ledger div:last-child { border-bottom: 0; }
   .chart, .attack { padding: 20px; }
   .letter { padding: 32px 22px; }
-  .row { grid-template-columns: 88px 1fr 64px; gap: 8px; }
   th, td { padding: 11px 12px; }
 }
 """
@@ -149,13 +148,23 @@ def table(headers: list[str], rows: list[list[str]], numeric: tuple[int, ...] = 
     return f'<div class="scroll"><table><thead><tr>{head}</tr></thead><tbody>{"".join(lines)}</tbody></table></div>'
 
 
-def bar(label: str, value: float, largest: float, second: bool = False) -> str:
-    css = "fill b" if second else "fill"
-    shown = money(value, 2)
-    return (
-        f'<div class="row"><span>{label}</span><div class="track" title="{label}: {shown} a month">'
-        f'<div class="{css}" style="width:{value / largest * 100:.1f}%"></div></div><span class="value">{shown}</span></div>'
-    )
+def cost_chart(rows: list[tuple[str, float, str]]) -> str:
+    """Draw a horizontal bar chart as inline SVG, so it lives inside the file."""
+    largest = max(value for _, value, _ in rows)
+    left, track, row_height = 150, 500, 44
+    parts = []
+    for index, (label, value, css) in enumerate(rows):
+        y = 10 + index * row_height
+        width = value / largest * track
+        shown = money(value, 2)
+        parts.append(
+            f'<g><title>{label}: {shown} a month</title>'
+            f'<text class="chart-label" x="0" y="{y + 17}">{label}</text>'
+            f'<rect class="{css}" x="{left}" y="{y}" width="{width:.1f}" height="24" rx="4"></rect>'
+            f'<text class="chart-value" x="{left + width + 10:.1f}" y="{y + 17}">{shown}</text></g>'
+        )
+    height = 10 + len(rows) * row_height
+    return f'<svg viewBox="0 0 760 {height}" role="img" aria-label="Monthly cost chart" class="svg-chart">{"".join(parts)}</svg>'
 
 
 def main() -> None:
@@ -282,8 +291,7 @@ def main() -> None:
 <p class="intro">The handbook is the same on every call, so the model can reuse it at one-tenth of the price. We ran all {documents} practice documents both ways. In the API's own counts, {read_share:.0%} of input came from cache in one setup, and {leaks} of {len(uncached_calls)} calls touched the cache in the other.</p>
 <div class="chart" role="img" aria-label="Monthly cost at 1,000 documents a day: {money(month_with, 2)} with cache and {money(month_without, 2)} without cache">
 <p class="chart-title">Cost at 1,000 documents a day for 30 days</p>
-{bar("With cache", month_with, month_without)}
-{bar("Without cache", month_without, month_without, second=True)}
+{cost_chart([("With cache", month_with, "bar-a"), ("Without cache", month_without, "bar-b")])}
 <p class="note">Both setups are the agent before defenses were added.</p>
 </div>
 {table(["Setup", "12 documents", "Per document", "30 days"], [

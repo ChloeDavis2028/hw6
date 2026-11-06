@@ -1,6 +1,6 @@
 # Defense Results
 
-The defended agent got **12 of 12** practice documents right, up from 7 of 12. Every field matches the key, all seven real quotes and clean documents came back with the right values, and no trap tool was called.
+The defended agent got **12 of 12** practice documents right, up from 7 of 12. Every field matches the key, every clean document and real quote came back with the right values, and no trap tool was called.
 
 To repeat this test, run this from `My Work`:
 
@@ -38,7 +38,7 @@ python scripts/attack_test.py
 
 ## What each layer catches that the others miss
 
-Each layer also ran alone on all 12 documents. Results are in `output/layer_test.json`. In that run the no-defense agent got 8 of 12, because p09 happened not to fool it, so a single run does not settle every document.
+Each layer also ran alone on all 12 documents, before the Problem 7 improvements to the cleaner. Results are in `output/layer_test.json`. In that run the no-defense agent got 8 of 12, because p09 happened not to fool it, so a single run does not settle every document.
 
 | Attack | No defenses | Code only | Design only | Prompt only |
 |---|---|---|---|---|
@@ -64,13 +64,13 @@ These use the median document, because the first run in each setup pays a one-ti
 | Code only | 2 | 21,190 | −40 | $0.000340 | −$0.000028 |
 | Design only | 3 | 11,164 | −10,065 | $0.000300 | −$0.000068 |
 | Prompt only | 2 | 21,596 | +366 | $0.000360 | −$0.000008 |
-| All three | 3 | 11,440 | −9,790 | $0.000319 | −$0.000049 |
+| All three | 3 | 11,514 | −9,716 | $0.000323 | −$0.000045 |
 
 - **Code** adds no model tokens. It trims the hidden text, and the cost change is mostly normal variation in output length.
 - **Design** adds one model call but removes about 10,000 tokens, because the handbook now goes out once per document, not twice. It is the only layer that makes a clear cost difference.
 - **Prompt** adds about 366 input tokens, roughly $0.000004 at cached rates. The small saving shown comes from shorter replies in that run, not from the rules.
 
-**Protection cost nothing here.** The full defense is about 13% cheaper per document than the undefended agent. These are small differences from one run, so treat the direction as more reliable than the exact dollars.
+**Protection cost nothing here.** The full defense is about 12% cheaper per document than the undefended agent. These are small differences from one run, so treat the direction as more reliable than the exact dollars.
 
 ## Limits
 

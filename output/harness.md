@@ -12,7 +12,7 @@ Add `--no-cache` to stop the handbook being read from or written to the cache.
 
 ## Fields in `models.py`
 
-The fields come from the report the handbook requires in section 13. Facts stay blank (`null`) when the document does not state them, because the handbook says never to guess a number.
+`VendorReport` is the final report. It joins `VendorFacts`, which the reader fills in, and `DecisionDraft`, which the decider fills in. The fields come from the report the handbook requires in section 13. Facts stay blank (`null`) when the document does not state them, because the handbook says never to guess a number.
 
 | Field | Type | Why it is there |
 |---|---|---|
