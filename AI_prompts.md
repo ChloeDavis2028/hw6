@@ -152,6 +152,12 @@ This file is the log of what I typed to my vibe coder. There is one section for 
 
 (Sent with four screenshots of the assignment's Problem 10 instructions and expected repo.)
 
+**Other prompt:**
+> update / create a word document explaing in detail step by step the intent and execution of this assignment in its entirety.  update the prompt documetn so I can learn howto write these prompts better in future tasks, and creat a checklist for this assignent that flows and follows the checklist from the ther assignmetns so I can re create this entire task with its objectives and execution pieces all on my own in the fure.  ensure gaps,opportunities, and caution and red flags are identified and fixed if required.
+
+**Other prompt:**
+> create a public repo
+
 **Follow-up prompt:**
 
 **What was lacking after the first:**
